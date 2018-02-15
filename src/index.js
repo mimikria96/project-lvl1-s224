@@ -2,42 +2,30 @@ import readlineSync from 'readline-sync';
 
 export const userName = () => {
     const answer = (user) => {
-        return user;
+        return `Hi ${user} !`;
     };
         const userAnswer = readlineSync.question('May I have your name? ');
         return answer(userAnswer);
 };
-export const brainEven = () => {
-  const userEven = readlineSync.question('May I have your name? ');
-    console.log(`Hi ${userEven} !\n`)
+export const braingame = (gamewelc, gamenum, gamecheck, correct) => {
+  console.log(`${gamewelc} \n`);
+  const user = readlineSync.question('May I have your name? ');
+    console.log(`Hi ${user} !\n`)
   const step = (n) => {
     const stepcounter = n;
-    if (stepcounter > 3) {                     //счетчик шагов
-      return `Congratulations, ${userEven}!`;
+    if (stepcounter > 3) {
+      return `Congratulations, ${user}!`;
     }
-    const getNumEven = () => {                 //возвращает рандомное число
-      const getRandomInt = (min, max) => {
-        return Math.floor(Math.random() * (max - min)) + min;
-      };
-      const num = getRandomInt(1, 100);
-      return num;
-    };
-    const getqst = (num) => `Question: ${num}`;
-    const actualnum = getNumEven();             // назначаем актуальное рандомное число для текущего вызова
-    const getQuestionEven = getqst(actualnum);
-      console.log(getQuestionEven);               //  выводим в консоль вопрос с актуальным числом
-      const answer = readlineSync.question('Your answer:', {   //далее запрашиваем ответ и проверяем
-        trueValue: ['yes'],
-        falseValue: ['no']
-      });
-      if (answer === true && actualnum%2 == 0) {
+    const getQuestion = (num) => `Question: ${num}`;
+    const actualnum = gamenum();
+    console.log(getQuestion(actualnum));
+      const getAnswer = readlineSync.question('Your answer:');
+      if (gamecheck(actualnum, getAnswer)) {
         console.log('Correct!');
         return step(stepcounter+1);
-      } else if (answer === false && actualnum%2 !== 0) {
-        console.log('Correct!');
-        return step(stepcounter+1);
-      } else {
-        return `'${answer}' is wrong answer ;(. Correct answer was '${actualnum%2 == 0 ? 'yes' : 'no'}'. \n Lets try again ${userEven}`;
+      }
+      else {
+        return `'${getAnswer}' is wrong answer ;(. Correct answer was '${correct(actualnum)}'. \n Lets try again ${user}`;
       }
     };
     return step(1);
