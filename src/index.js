@@ -7,7 +7,7 @@ export const userName = () => {
         const userAnswer = readlineSync.question('May I have your name? ');
         return answer(userAnswer);
 };
-export const braingame = (gamewelc, gamenum, gamecheck, correct) => {
+export const braingame = (gamewelc, gamenum, correct) => {
   console.log(`${gamewelc} \n`);
   const user = readlineSync.question('May I have your name? ');
     console.log(`Hi ${user} !\n`)
@@ -20,7 +20,7 @@ export const braingame = (gamewelc, gamenum, gamecheck, correct) => {
     const actualnum = gamenum();
     console.log(getQuestion(actualnum));
       const getAnswer = readlineSync.question('Your answer:');
-      if (gamecheck(actualnum, getAnswer)) {
+      if (getAnswer == correct(actualnum)) {
         console.log('Correct!');
         return step(stepcounter+1);
       }
