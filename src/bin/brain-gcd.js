@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import * as gcd from '../games/gcd';
 import {braingame} from '..';
 
