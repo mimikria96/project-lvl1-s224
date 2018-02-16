@@ -1,17 +1,16 @@
 import readlineSync from 'readline-sync';
 
-export const userName = () => {
-    const answer = (user) => {
-        return `Hi ${user} !`;
-    };
-        const userAnswer = readlineSync.question('May I have your name? ');
-        return answer(userAnswer);
-};
-export const braingame = (gamewelc, gamenum, correct) => {
+const braingame = (gamewelc, gamenum, correct) => {
   console.log('Welcome to the Brain Games!');
+  if(gamewelc) {
   console.log(`${gamewelc} \n`);
+  }
+  else {
+    console.log('\n');
+  }
   const user = readlineSync.question('May I have your name? ');
     console.log(`Hi ${user} !\n`)
+  if (gamenum) {
   const step = (n) => {
     const stepcounter = n;
     if (stepcounter > 3) {
@@ -30,4 +29,6 @@ export const braingame = (gamewelc, gamenum, correct) => {
       }
     };
     return step(1);
+  }
 };
+export default braingame;
