@@ -11,24 +11,6 @@ export  const getNumGcd = () => {
   const getnum = () => pair(cons(getRandomInt(1, 100), getRandomInt(1, 100)));
   return getnum;
 };
-
-/*export const checkNumGcd = () => {
-  const getgcd = (a, b) => {
-  if (b == 0) {
-      return a;
-    }
-  return getgcd(b, a % b);
-    };
-  const check = (numbers, useranswer) => {
-    const arr = numbers.split(' ', 2);
-  if (useranswer == getgcd(arr[0], arr[1])) {
-    return true;
-  }
-  else return false;
-  };
-  return check;
-};
-*/
 export const correctGcd =() =>  {
   const getgcd = (a, b) => {
     if (b == 0) {
