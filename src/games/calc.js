@@ -1,6 +1,6 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 
-export const welcomeCalc = `What is the result of the expression?  \n`;
+export const welcomeCalc = `What is the result of the expression?`;
 export  const getNumCalc = () => {
   const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;

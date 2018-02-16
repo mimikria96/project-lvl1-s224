@@ -1,5 +1,5 @@
 
-export const welcomeEven = `Answer "yes" if number even otherwise answer "no".  \n`;
+export const welcomeEven = `Answer "yes" if number even otherwise answer "no".`;
 export  const getNumEven = () => {
   const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;

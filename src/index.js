@@ -8,6 +8,7 @@ export const userName = () => {
         return answer(userAnswer);
 };
 export const braingame = (gamewelc, gamenum, correct) => {
+  console.log('Welcome to the Brain Games!');
   console.log(`${gamewelc} \n`);
   const user = readlineSync.question('May I have your name? ');
     console.log(`Hi ${user} !\n`)

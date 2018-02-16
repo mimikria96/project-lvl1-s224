@@ -1,6 +1,6 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 
-export const welcomeGcd = `What is the result of the expression?  \n`;
+export const welcomeGcd = `Find the greatest common divisor of given numbers.`;
 export  const getNumGcd = () => {
   const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
