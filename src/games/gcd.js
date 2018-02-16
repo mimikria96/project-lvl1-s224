@@ -1,4 +1,4 @@
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 import braingame from '..';
 
 export const rules = `Find the greatest common divisor of given numbers.`;
