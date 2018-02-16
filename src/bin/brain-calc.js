@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import * as calc from '../games/calc';
-import braingame from '..';
+import calc from '../games/calc';
 
-braingame(calc.welcomeCalc, calc.getNumCalc(), calc.correcCalc());
+calc();

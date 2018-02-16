@@ -1,33 +1,23 @@
-import { cons, car, cdr } from 'hexlet-pairs';
+import {cons} from 'hexlet-pairs';
+import braingame from '..';
 
-export const welcomeCalc = `What is the result of the expression?`;
-export  const getNumCalc = () => {
-  const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+const rules = `What is the result of the expression?`;
+
+const checkNumCalc = () => {
+    const getRandomInt = (min, max) => {
+      return Math.floor(Math.random() * (max - min)) + min;
+    };
+  const check = (oper,a,b) => {
+
+      const question = oper ==1 ? `${a} + ${b}`: oper == 2 ? `${a} * ${b}` : `${a} - ${b}`;
+      const rightansw = oper ==1 ? a + b : oper == 2 ? a * b : a - b;
+      return cons(question,rightansw);
+
   };
-  const getoper = () =>{
-    const possible ="*+-";
-    return possible[getRandomInt(0,2)];
-  }
-  const expression = (num, oper) => {
-    if (car(num) < cdr(num) && oper == '-') {
-      return `${cdr(num)} ${oper} ${car(num)}`
-    }
-    return `${car(num)} ${oper} ${cdr(num)}`;
-  }
-  const getnum = () => expression(cons(getRandomInt(1, 100), getRandomInt(1, 100)), getoper());
+  const getnum = () => check(getRandomInt(1, 3), getRandomInt(1, 100), getRandomInt(1, 100));
   return getnum;
 };
-export const checkNumCalc = () => {
-  const check = (num, useranswer) => {
-  if (useranswer == eval(num)) {
-    return true;
-  }
-  else return false;
-  };
-  return check;
+const calc = () => {
+  return braingame(rules,checkNumCalc());
 };
-export const correcCalc =() => {
-  const answer = (num) =>  eval(num);
-  return answer;
-};
+export default calc;

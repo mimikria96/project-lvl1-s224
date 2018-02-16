@@ -1,25 +1,20 @@
+import { cons } from 'hexlet-pairs';
+import braingame from '..';
 
-export const welcomeEven = `Answer "yes" if number even otherwise answer "no".`;
-export  const getNumEven = () => {
+const rules = `Answer "yes" if number even otherwise answer "no".`;
+
+const checkNumEven = () => {
   const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
   };
-  const getnum = () => getRandomInt(1, 200);
-  return getnum;
+  const check = (num) => {
+    return cons(num, num%2==0 ? 'yes':'no');
 };
-export const checkNumEven = () => {
-  const check = (num, useranswer) => {
-  if (num%2 === 0 && useranswer == 'yes') {
-    return true;
-  }
-  else if(num%2 !== 0 && useranswer == 'no') {
-    return true;
-  }
-  else return false;
-  };
-  return check;
+const getnum = () => check(getRandomInt(1, 100));
+return getnum;
+
 };
-export const correcEven =() => {
-  const answer = (num) => num%2 === 0? 'yes' : 'no';
-  return answer;
+const even = () => {
+  return braingame(rules,checkNumEven());
 };
+export default even;

@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
+import {car, cdr } from 'hexlet-pairs';
 
-const braingame = (gamewelc, gamenum, correct) => {
+const braingame = (gamewelc, correct) => {
   console.log('Welcome to the Brain Games!');
   if(gamewelc) {
   console.log(`${gamewelc} \n`);
@@ -10,22 +11,23 @@ const braingame = (gamewelc, gamenum, correct) => {
   }
   const user = readlineSync.question('May I have your name? ');
     console.log(`Hi ${user} !\n`)
-  if (gamenum) {
+  if (correct) {
   const step = (n) => {
     const stepcounter = n;
     if (stepcounter > 3) {
-      return `Congratulations, ${user}!`;
+      return console.log(`Congratulations, ${user}!`);
+
     }
     const getQuestion = (num) => `Question: ${num}`;
-    const actualnum = gamenum();
-    console.log(getQuestion(actualnum));
+    const actualnum = correct();
+    console.log(getQuestion(car(actualnum)));
       const getAnswer = readlineSync.question('Your answer:');
-      if (getAnswer == correct(actualnum)) {
+      if (getAnswer == cdr(actualnum)) {
         console.log('Correct!');
         return step(stepcounter+1);
       }
       else {
-        return `'${getAnswer}' is wrong answer ;(. Correct answer was '${correct(actualnum)}'. \n Lets try again ${user}`;
+        return console.log( `'${getAnswer}' is wrong answer ;(. Correct answer was '${cdr(actualnum)}'. \n Lets try again ${user}`);
       }
     };
     return step(1);

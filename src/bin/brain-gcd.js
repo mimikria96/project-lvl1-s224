@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import * as gcd from '../games/gcd';
-import braingame from '..';
+import gcd from '../games/gcd';
 
-braingame(gcd.welcomeGcd, gcd.getNumGcd(), gcd.correctGcd());
+gcd();

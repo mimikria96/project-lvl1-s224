@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import * as even from '../games/even';
-import braingame from '..';
+import even from '../games/even';
 
-braingame(even.welcomeEven, even.getNumEven(), even.correcEven());
+even();
