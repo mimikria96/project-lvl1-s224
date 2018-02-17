@@ -1,12 +1,11 @@
 import { cons } from 'hexlet-pairs';
 import braingame from '..';
+import getRandomInt from './getRandomInt';
 
-export const rules = `Find the greatest common divisor of given numbers.`;
-export  const getNumGcd = () => {
-  const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
-  const check = (a, b) => {
+const rules = `Find the greatest common divisor of given numbers.`;
+const generatePairGcd = () => {
+
+  const getpair = (a, b) => {
     const getgcd = (a, b) => {
       if (b == 0) {
         return a;
@@ -17,10 +16,13 @@ export  const getNumGcd = () => {
     const rightansw = getgcd(a, b);
     return cons(question,rightansw);
   }
-  return check(getRandomInt(1, 100), getRandomInt(1, 100));
+  const generate = () => getpair(getRandomInt(1, 100), getRandomInt(1, 100));
+  return generate;
 };
 
+const answ_qst = generatePairGcd();
+
 const gcd = () => {
-  return braingame(rules,getNumGcd);
+  return braingame(rules,answ_qst);
 }
 export default gcd;

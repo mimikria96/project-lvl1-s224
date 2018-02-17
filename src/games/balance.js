@@ -1,12 +1,10 @@
 import { cons } from 'hexlet-pairs';
 import braingame from '..';
+import getRandomInt from './getRandomInt';
 
 const rules = `Balance the given number.`;
 
-const checkNumBalance = () => {
-  const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
+const generatePairBalance = () => {
   const getMax = (numArray) => {
     return Math.max.apply(null, numArray);
   };
@@ -29,15 +27,16 @@ const checkNumBalance = () => {
     }
     return getUnbalanced();
   };
-  const check = (qwst) => {
+  const getpair = (qwst) => {
     return cons(qwst.join(''), getBalanced(qwst).join(''));
 };
-const getnum = () => check(getUnbalanced());
-return getnum;
+const generate = () => getpair(getUnbalanced());
+return generate;
 };
+
+const answ_qst = generatePairBalance();
+
 const balance = () => {
-  return braingame(rules,checkNumBalance());
+  return braingame(rules,answ_qst);
 };
-
-
 export default balance;
