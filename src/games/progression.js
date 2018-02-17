@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import braingame from '..';
 import getRandomInt from './getRandomInt';
 
-const rules = `Find the greatest common divisor of given numbers.`;
+const rules = `What number is missing in this progression?`;
 
 const generatePairProg = () => {
 
