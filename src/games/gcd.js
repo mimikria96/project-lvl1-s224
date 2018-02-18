@@ -6,7 +6,7 @@ const rules = `Find the greatest common divisor of given numbers.`;
 const generatePairGcd = () => {
 
     const getgcd = (a, b) => {
-      if (b == 0) {
+      if (b === 0) {
         return a;
       }
       return getgcd(b, a % b);

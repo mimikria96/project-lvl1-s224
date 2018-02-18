@@ -10,7 +10,7 @@ const generatePairProg = () => {
     const a = getRandomInt(1, 100);
     const b = getRandomInt(1, 100);
     const generateArr = (acc, num) => {
-      if(num == 9) {
+      if(num === 9) {
         return acc;
       }
       acc.push(acc[num] + 2);

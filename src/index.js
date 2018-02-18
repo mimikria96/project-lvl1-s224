@@ -21,7 +21,7 @@ const braingame = (gamewelc, correct) => {
     const getQuestion = (num) => `Question: ${num}`;
     console.log(getQuestion(car(actual)));
       const getAnswer = readlineSync.question('Your answer:');
-      if (getAnswer == cdr(actual)) {
+      if (getAnswer === cdr(actual).toString()) {
         console.log('Correct!');
         return step(stepcounter+1);
       }

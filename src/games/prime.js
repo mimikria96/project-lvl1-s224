@@ -3,23 +3,25 @@ import braingame from '..';
 import getRandomInt from '../getRandomInt';
 
 const rules = `Answer "yes" if number even otherwise answer "no".`;
-const isPrime = (num, acc) => {
-
-  if (num == 1 || num == 2 ) {
+const isPrime = (num) => {
+ const check = (num, acc) => {
+  if (num === 1 || num === 2 ) {
     return true;
   }
-    if (acc == num) {
+    if (acc === num) {
       return true;
     }
-    if(num%acc == 0) {
+    if(num%acc === 0) {
       return false;
     }
-    return isPrime(num, acc + 1);
+    return check(num, acc + 1);
+  };
+    return check(num, 2);
   };
 
 const generatePairPrime = () => {
-  const num = getRandomInt(1,30)
-      return cons(num, isPrime(num, 2) ? 'yes' : 'no');
+  const num = getRandomInt(1,30);
+      return cons(num, isPrime(num) ? 'yes' : 'no');
 };
 
 
