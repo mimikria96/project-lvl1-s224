@@ -18,11 +18,10 @@ const isPrime = (num, acc) => {
   };
 
 const generatePairPrime = () => {
-  const getpair = (num) => {
+  const num = getRandomInt(1,30)
       return cons(num, isPrime(num, 2) ? 'yes' : 'no');
-    };
-    return getpair(getRandomInt(1,30));
 };
+
 
 const prime = () => {
   return braingame(rules, generatePairPrime);

@@ -5,18 +5,17 @@ import getRandomInt from '../getRandomInt';
 const rules = `Find the greatest common divisor of given numbers.`;
 const generatePairGcd = () => {
 
-  const getpair = (a, b) => {
     const getgcd = (a, b) => {
       if (b == 0) {
         return a;
       }
       return getgcd(b, a % b);
     };
+    const a = getRandomInt(1, 100);
+    const b = getRandomInt(1, 100);
     const question = `${a} ${b}`;
     const rightansw = getgcd(a, b);
     return cons(question,rightansw);
-  }
-    return  getpair(getRandomInt(1, 100), getRandomInt(1, 100));
 };
 
 const gcd = () => {

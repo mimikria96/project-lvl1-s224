@@ -27,10 +27,10 @@ const generatePairBalance = () => {
     }
     return getUnbalanced();
   };
-  const getpair = (qwst) => {
+
+    const qwst = getUnbalanced();
     return cons(qwst.join(''), getBalanced(qwst).join(''));
-};
- return getpair(getUnbalanced());
+
 
 };
 

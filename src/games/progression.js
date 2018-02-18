@@ -6,8 +6,9 @@ const rules = `What number is missing in this progression?`;
 
 const generatePairProg = () => {
 
-  const getpair = (a, b) => {
 
+    const a = getRandomInt(1, 100);
+    const b = getRandomInt(1, 100);
     const generateArr = (acc, num) => {
       if(num == 9) {
         return acc;
@@ -20,9 +21,8 @@ const generatePairProg = () => {
     numArr[numArr.indexOf(rightansw)] = '..';
     const question = `${numArr.join(' ')}`;
     return cons(question,rightansw);
-  }
-  return getpair(getRandomInt(1, 100), getRandomInt(0, 10));
 };
+
 const progression = () => {
   return braingame(rules,generatePairProg);
 }
