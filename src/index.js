@@ -16,18 +16,17 @@ const braingame = (gamewelc, correct) => {
     const stepcounter = n;
     if (stepcounter > 3) {
       return console.log(`Congratulations, ${user}!`);
-
     }
+    const actual = correct();
     const getQuestion = (num) => `Question: ${num}`;
-    const actualnum = correct();
-    console.log(getQuestion(car(actualnum)));
+    console.log(getQuestion(car(actual)));
       const getAnswer = readlineSync.question('Your answer:');
-      if (getAnswer == cdr(actualnum)) {
+      if (getAnswer == cdr(actual)) {
         console.log('Correct!');
         return step(stepcounter+1);
       }
       else {
-        return console.log( `'${getAnswer}' is wrong answer ;(. Correct answer was '${cdr(actualnum)}'. \n Lets try again ${user}`);
+        return console.log( `'${getAnswer}' is wrong answer ;(. Correct answer was '${cdr(actual)}'. \n Lets try again ${user}`);
       }
     };
     return step(1);

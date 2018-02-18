@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import braingame from '..';
-import getRandomInt from './getRandomInt';
+import getRandomInt from '../getRandomInt';
 
 const rules = `What number is missing in this progression?`;
 
@@ -21,11 +21,9 @@ const generatePairProg = () => {
     const question = `${numArr.join(' ')}`;
     return cons(question,rightansw);
   }
-  const generate = () => getpair(getRandomInt(1, 100), getRandomInt(0, 10));
-  return generate;
+  return getpair(getRandomInt(1, 100), getRandomInt(0, 10));
 };
-const answ_qst = generatePairProg();
 const progression = () => {
-  return braingame(rules,answ_qst);
+  return braingame(rules,generatePairProg);
 }
 export default progression;
